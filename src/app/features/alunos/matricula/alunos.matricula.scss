@@ -1,0 +1,20 @@
+
+.container-inputs{
+    padding: 0px 0;
+}
+
+.forms {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 24px;
+}
+
+.modal-body{
+    border-radius: 8px;
+    padding: 24px;
+}
+
+.modal-footer{
+        padding: 24px;
+}

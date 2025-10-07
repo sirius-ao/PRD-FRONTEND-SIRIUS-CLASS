@@ -1,0 +1,25 @@
+.title {
+    gap: 16px;
+    display: flex;
+    color: #242424;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 14px;
+
+    span {
+        display: flex;
+        font-size: 12px;
+        gap: 8px;
+        padding-top: 10px;
+        height: 24px;
+    }
+
+    h1 {
+        font-size: 26px;
+        font-weight: 400;
+    }
+
+    p {
+        font-size: 12px;
+        word-spacing: 1px;
+    }
+}

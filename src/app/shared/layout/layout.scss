@@ -1,0 +1,22 @@
+:host{
+    display: block;
+    background-color: #f9f9f9;
+    max-height: 100vh;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    overflow: hidden;
+
+    .app-container{
+        display: grid;
+        grid-template-columns: auto 1fr ;
+        max-height: 100vh;
+    }
+
+    .app-content{
+        padding: 56px;
+        height: 90vh;
+        overflow: auto;
+        padding-bottom: 48px;
+    }
+
+}

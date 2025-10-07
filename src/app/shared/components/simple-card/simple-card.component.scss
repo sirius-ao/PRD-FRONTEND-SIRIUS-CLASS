@@ -1,0 +1,28 @@
+.card {
+    background-color: #FFF;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px;
+    box-shadow: 0 0 4px #dddddd;
+
+    span {
+        border: 2px solid #999999;
+        height: 52px;
+        width: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50px;
+        position: relative;
+        font-size: 12px;
+        background-color: #FFF;
+    }
+
+    h3 {
+        font-weight: 400;
+        font-size: 17px;
+        color: #323232;
+    }
+}

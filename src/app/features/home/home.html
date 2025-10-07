@@ -1,0 +1,81 @@
+<app-header-indicator-page-component moduleName="Dashboard" pageName="home" />
+
+<div class="container-card">
+    <div class="card">
+        <h3>Payment Status</h3>
+
+        <span>
+        </span>
+    </div>
+    <div class="card">
+        <h3>Work Progress</h3>
+        
+        <span>
+        </span>
+    </div>
+    <div class="card">
+        <h3>Task Completed</h3>
+        
+        <span>
+        </span>
+    </div>
+    <div class="card">
+        <h3>Payments Done</h3>
+        
+        <span>
+        </span>
+    </div>
+</div>
+
+<div class="container-chart-data">
+    <div class="chart-data">
+        <div class="desc">
+            <span>
+                <h3 class="title">Website Visites</h3>
+                <p class="subtitle">Unique Visitors</p>
+            </span>
+
+            <button>This Week</button>
+        </div>
+        <canvas class="chart" baseChart [data]="chartData" [type]="chartType" [options]="chartOptions">
+        </canvas>
+    </div>
+    
+    <div class="chart-data">
+        <div class="desc">
+            <span>
+                <h3 class="title">Conversion Rates</h3>
+                <p class="subtitle">Per Session</p>
+            </span>
+    
+            <button>This Week</button>
+        </div>
+        <canvas class="chart" baseChart [data]="chartData" [type]="chartType" [options]="chartOptions">
+        </canvas>
+    </div>
+</div>
+
+<div class="container-card-aproveitament">
+    <div class="card">
+        <h3>Product Categories</h3>
+
+        <div class="container-char">
+            <canvas class="chart" baseChart [data]="chartProduct" [type]="'polarArea'" [options]="chartProductOptions">
+            </canvas>
+        </div>
+    </div>
+    <div class="card">
+        <h3>Profile Status</h3>
+        <div class="container-char">
+            <canvas class="chart" baseChart [data]="chartProfile" [type]="'polarArea'" [options]="chartProductOptions">
+            </canvas>
+        </div>
+    </div>
+    <div class="card">
+        <h3>Ord Stock</h3>
+        <div class="container-char">
+            <canvas class="chart" baseChart [data]="chartOrd" [type]="'polarArea'" [options]="chartProductOptions">
+            </canvas>
+        </div>
+    </div>
+</div>

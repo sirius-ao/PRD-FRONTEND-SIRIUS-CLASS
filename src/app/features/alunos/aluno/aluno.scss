@@ -1,0 +1,57 @@
+:host{
+    gap: 48px;
+    display: grid;
+    grid-template-rows: 40px 1fr;
+    height: 100%;
+
+    .header{
+        border-bottom: 1px solid #ddd;
+
+        ul{
+            display: flex;
+            gap: 24px;
+            list-style: none;
+
+            li{
+                font-weight: 300;
+                color: gray;
+                cursor: pointer;
+                font-size: 14px;
+            }
+        }
+    }
+    
+    section{
+        grid-template-columns: 2fr 1fr;
+        display: grid;
+        gap: 24px;
+        height: 100%;
+
+        .container-data{
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .dados-pessoa{
+            padding: 8px;
+            height: 100%;
+        }
+
+        .container-data-user{
+            display: flex;
+            justify-content: center;
+            padding-top: 24px;
+
+            .foto-user{
+                height: 200px;
+                width: 200px;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+            }
+        }
+
+    }
+    .container-buttons{
+        margin-top: 16px;
+    }
+}

@@ -1,0 +1,70 @@
+<app-header-indicator-page-component moduleName="Alunos" pageName="Jemilson Luis" />
+
+<section>
+    <div class="container-data">
+        <div class="header">
+            <ul>
+                <li>Dados do aluno</li>
+                <li>Documentos carregados</li>
+                <li>Informações de cursos</li>
+                <li>Pagamentos</li>
+            </ul>
+        </div>
+
+        <div class="grid-2">
+            <label for="">
+                Nome
+                <input required mask="AAAAAAAAAAAAAAAAAAAA" type="text" name="" id="" placeholder="Digite apenas o nome">
+            </label>
+        
+            <label for="">
+                Sobrenome
+                <input required type="text" name="" id="" placeholder="Digite o sobrenome">
+            </label>
+        </div>
+        <div class="grid-3-first">
+            <label for="">
+                Bilhete de identidade
+                <input required mask="000000000AA000" type="text" name="" id="" class="uppercase" placeholder="BI 102876733KN046">
+            </label>
+
+            <label for="">
+                Data de nascimento
+                <input required mask="00 / 00 / 0000" type="text" placeholder="dd / mm / yyyyy" name="" id="">
+            </label>
+        
+            <label for="">
+                Genero
+                <Select required>
+                    <option value="">Homem</option>
+                    <option value="">Mulher</option>
+                </Select>
+            </label>            
+        </div>
+        <div class="grid-3-last">
+            <label for="">
+                Password
+                <input required placeholder="*****" type="password" name="" id="">
+            </label>
+
+            <label for="">
+                Telefone
+                <input required mask="000 000 000" name="" id="" placeholder="921 000 000">
+            </label>
+
+            <label for="">
+                Email
+                <input required type="email" name="" id="" placeholder="emailaluno@gmail.com">
+            </label>       
+        </div>
+        <div class="grid-2">
+            <div class="container-buttons">
+                <button class="primary-btn" routerLink="alunos/aluno">Actualizar dados</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-data-user">
+        <div class="foto-user"></div>
+    </div>
+</section>

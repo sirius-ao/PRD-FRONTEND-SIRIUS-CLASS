@@ -1,0 +1,17 @@
+:host{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .grid-4{
+        padding-top: 24px;
+        display: grid;
+        gap: 24px;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+    }
+    
+}
+
+tr{
+    background-color: red;
+}

@@ -1,0 +1,104 @@
+<aside>
+    <div class="main-menu" [ngClass]="_asideController.atualAsideState() >= 2 ? 'show':'hide' ">
+        <button class="" routerLinkActive="active" routerLink="home" (click)="changeActiveLink('')">
+            <ng-icon name="lucideLayoutDashboard" size="32px" strokeWidth="1" />
+            <p>Dashboards</p>
+        </button>
+
+        <button routerLink="alunos" routerLinkActive="active" (click)="changeActiveLink('alunos')">
+            <ng-icon name="lucideGraduationCap" size="34px" strokeWidth="1" />
+            <p>Alunos</p>
+        </button>
+
+        <button routerLink="professores" routerLinkActive="active" (click)="changeActiveLink('professores')">
+            <ng-icon name="lucidePresentation" size="32px" strokeWidth="1" />
+            <p>Professores</p>
+        </button>
+
+        <button routerLink="cursos" routerLinkActive="active" (click)="changeActiveLink('cursos')">
+            <ng-icon name="lucideFile" size="32px" strokeWidth="1" />
+            <p>Cursos</p>
+        </button>
+        
+        <button routerLink="financas" routerLinkActive="active" (click)="changeActiveLink('financas')">
+            <ng-icon name="lucideChartPie" size="32px" strokeWidth="1" />
+            <p>Finanças</p>
+        </button>
+
+        <button routerLink="relatorios" routerLinkActive="active" (click)="changeActiveLink('relatorios')">
+            <ng-icon name="lucideFolderOpen" size="32px" strokeWidth="1" />
+            <p>Relatórios</p>
+        </button>
+    </div>
+
+    <div class="sub-menu" [ngClass]="_asideController.atualAsideState() > 2 ? 'show':'hide'">
+        @switch (activeLink) {
+            @case ("alunos") {
+                <ul>
+                    <li routerLink="alunos/matricula" routerLinkActive="active"> <ng-icon name="lucideIdCardLanyard" size="22px" strokeWidth="0.8" /> Matriculas </li>
+                    <li routerLink="alunos/listas" routerLinkActive="active"> <ng-icon name="lucideLibrary" size="22px" strokeWidth="0.8" /> Listas </li>
+                    <li routerLink="alunos/historico" routerLinkActive="active"> <ng-icon name="lucideNotebook" size="22px" strokeWidth="0.8" /> Históricos </li>
+                    <li routerLink="alunos/frequencia" routerLinkActive="active"> <ng-icon name="lucideSquareCheckBig" size="22px" strokeWidth="0.8" /> Frequências </li>
+                    <li> <ng-icon name="lucideFolderOpen" size="22px" strokeWidth="0.8" /> Relatórios </li>
+                    <li  routerLink="alunos/filtros" routerLinkActive="active"> <ng-icon name="lucideFileSearch" size="22px" strokeWidth="0.8" /> Filtros </li>
+                </ul>
+            }
+            @case ("professores") {
+                <ul>
+                    <li routerLink="alunos" routerLinkActive="active"> <ng-icon name="lucideIdCardLanyard" size="22px" strokeWidth="0.8" /> Novo professor </li>
+                    <li> <ng-icon name="lucideLibrary" size="22px" strokeWidth="0.8" /> Listas </li>
+                    <li> <ng-icon name="lucideNotebook" size="22px" strokeWidth="0.8" /> Turmas </li>
+                    <li> <ng-icon name="lucideCalendarClock" size="22px" strokeWidth="0.8" /> Carga Horária </li>
+                    <li> <ng-icon name="lucideSquareCheckBig" size="22px" strokeWidth="0.8" /> Desempenho </li>
+                    <li> <ng-icon name="lucideFolderOpen" size="22px" strokeWidth="0.8" /> Relatórios </li>
+                </ul>
+            }
+            @case ("cursos") {
+                <ul>
+                    <li routerLink="alunos" routerLinkActive="active"> <ng-icon name="lucideFile" size="22px" strokeWidth="0.8" /> Novo curso </li>
+                    <li> <ng-icon name="lucideCalendar" size="22px" strokeWidth="0.8" /> Calendários </li>
+                    <li> <ng-icon name="lucideNotebook" size="22px" strokeWidth="0.8" /> Turmas </li>
+                    <li> <ng-icon name="lucideCalendarClock" size="22px" strokeWidth="0.8" /> Gestão de Turmas </li>
+                    <li> <ng-icon name="lucideBookCopy" size="22px" strokeWidth="0.8" /> Conteúdos </li>
+                    <li> <ng-icon name="lucideFolderOpen" size="22px" strokeWidth="0.8" /> Relatórios </li>
+                </ul>
+            }
+            @case ("financas") {
+                <ul>
+                    <li routerLink="alunos" routerLinkActive="active"> <ng-icon name="lucideFile" size="22px" strokeWidth="0.8" /> Receitas </li>
+                    <li> <ng-icon name="lucideFile" size="22px" strokeWidth="0.8" /> Registrar pagamento </li>
+                    <li> <ng-icon name="lucideCalendar" size="22px" strokeWidth="0.8" /> Mensalidades </li>
+                    <li> <ng-icon name="lucideCalendarClock" size="22px" strokeWidth="0.8" /> Inadimplência </li>
+                    <li> <ng-icon name="lucideHandCoins" size="22px" strokeWidth="0.8" /> Despesas </li>
+                    <li> <ng-icon name="lucideFile" size="22px" strokeWidth="0.8" /> Nova Despesa </li>
+                    <li> <ng-icon name="lucideFolderOpen" size="22px" strokeWidth="0.8" /> Relatório de Custos </li>
+                    <li> <ng-icon name="lucideFolderOpen" size="22px" strokeWidth="0.8" /> Relatórios Financeiros </li>
+                    <li> <ng-icon name="lucideChartNoAxesCombined" size="22px" strokeWidth="0.8" /> Fluxo de caixa </li>
+
+                </ul>
+            }
+            @case ("relatorios") {
+                <ul>
+                    <li routerLink="alunos" routerLinkActive="active"> <ng-icon name="lucideLayoutDashboard" size="22px" strokeWidth="0.8" /> Dashboard Geral </li>
+                    
+                    <li class="dropdown-container" (click)="changeIndicatorDropController()">
+                        <span> <span><ng-icon name="lucideCalendar" size="22px" strokeWidth="0.8" /> Indicadores </span> 
+                            <ng-icon [ngStyle]="{
+                            'transform': indicadorDropController ? 'rotate(0deg)' : 'rotate(-90deg)',
+                            'transition': 'transform 0.1s ease'
+                            }" name="lucideChevronDown" size="22px" strokeWidth="0.8"/>
+                        </span>
+
+                        <div class="dropdown" *ngIf="indicadorDropController">
+                            <li> Académicos </li>
+                            <li> Operacionais </li>
+                            <li> Financeiros </li>
+                        </div>
+                    </li>
+
+                    <li> <ng-icon name="lucideBookCopy" size="22px" strokeWidth="0.8" /> Exportação </li>
+                </ul>
+            }
+        }
+    </div>
+</aside>

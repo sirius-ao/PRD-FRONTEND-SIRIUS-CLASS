@@ -1,0 +1,102 @@
+<app-header-indicator-page-component moduleName="Alunos" pageName="Filtros" />
+
+<div class="forms">
+    <app-header-indicator-page-component pageName="Dados de aluno" />
+
+    <div class="grid-3">
+        <label for="">
+            Nome
+            <input required type="text" name="" id="" placeholder="Buscar por nome">
+        </label>
+
+        <label for="">
+            Sobrenome
+            <input required type="text" name="" id="" placeholder="Buscar por sobrenome">
+        </label>
+
+        <label for="">
+            Bilhete de identidade
+            <input required [dropSpecialCharacters]="false" mask="000000000AA000" type="text" name="" id="" class="uppercase"
+                placeholder="BI 102876733KN046">
+        </label>
+    </div>
+
+    <div class="grid-4">
+        <label for="">
+            Data de nascimento
+            <input required mask="00 / 00 / 0000" type="text" placeholder="dd / mm / yyyyy" name="" id="">
+        </label>
+        <label for="">
+            Genero
+            <Select required>
+                <option value="">Homem</option>
+                <option value="">Mulher</option>
+            </Select>
+        </label>
+        <label for="">
+            Email
+            <input required type="email" name="" id="" placeholder="emailaluno@gmail.com">
+        </label>
+        <label for="">
+            Telefone
+            <input required mask="000 000 000" placeholder="921 000 000" name="" id="">
+        </label>
+    </div>
+
+    <!-- <div class="grid-4">
+        <label for="">
+            Nome
+            <input required type="text" name="" id="" placeholder="Buscar por nome">
+        </label>
+        <label for="">
+            Bilhete de identidade
+            <input required [dropSpecialCharacters]="false" mask="000000000AA000" type="text" name="" id=""
+                class="uppercase" placeholder="BI 102876733KN046">
+        </label>
+
+    </div> -->
+    <app-header-indicator-page-component pageName="Dados do curso" />
+    
+    <div class="grid-3">
+        <label for="">
+            Curso
+            <Select required>
+                <option value="">Programação Web</option>
+                <option value="">Programação Mobile</option>
+                <option value="">CCNA 1</option>
+                <option value="">CCNA 2</option>
+            </Select>
+    
+        </label>
+        <label for="">
+            Edição
+            <Select required>
+                <option value="">Black Freeday</option>
+                <option value="">Demo Day</option>
+            </Select>
+        </label>
+        <label for="">
+            Periudo
+            <Select required>
+                <option value="">8h às 10h</option>
+                <option value="">12 às 14h</option>
+                <option value="">16 às 18h</option>
+            </Select>
+        </label>
+    </div>
+    <div class="grid-3">
+        <label for="">
+            Turma
+            <Select required>
+                <option value="">AB12</option>
+                <option value="">AB13</option>
+                <option value="">AB14</option>
+                <option value="">AB15</option>
+            </Select>
+        </label>
+    
+        <div class="container-buttons">
+            <button class="primary-btn" routerLink="alunos/aluno">Buscar aluno</button>
+        </div>
+    </div>
+</div>

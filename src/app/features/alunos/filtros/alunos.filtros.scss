@@ -1,0 +1,28 @@
+:host{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+
+    .grids-containers{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .container-data-table{
+        margin-top: 24px;
+    }
+
+    .container-inputs{
+        height: 70vh;
+    }
+
+
+
+    .forms{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+}

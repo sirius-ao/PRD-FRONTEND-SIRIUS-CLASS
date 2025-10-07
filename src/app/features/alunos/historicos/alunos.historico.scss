@@ -1,0 +1,51 @@
+:host{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.container-card{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 24px;
+}
+
+.card {
+    background-color: #FFFFFF;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px;
+    box-shadow: 0 0 4px #dddddd;
+
+    span {
+        border: 1px solid #999999;
+        height: 52px;
+        width: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50px;
+        font-size: 12px;
+    }
+
+    h3 {
+        font-weight: 400;
+        font-size: 17px;
+        color: #323232;
+    }
+}
+
+.footer{
+    display: flex;
+    align-items: center;
+    gap: 64px;
+
+    span{
+        font-size: 16px;
+        font-weight: 600;
+        display: flex;
+        gap: 8px;
+    }
+}

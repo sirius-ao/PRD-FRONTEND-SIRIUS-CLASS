@@ -1,0 +1,156 @@
+:host{
+    .title{
+        gap: 16px;
+        display: flex;
+        color: #242424;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 14px;
+        
+        span{
+            display: flex;
+            font-size: 12px;
+            gap: 8px;
+            padding-top: 12px;
+        }
+
+        h1{
+            font-size: 26px;
+            font-weight: 400;
+        }
+
+        p{
+            font-size: 12px;
+        }
+    }
+
+    .desc{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        button{
+            background: transparent;
+            border: 1px solid #aaa;
+            outline: none;
+            padding: 4px 16px;
+            border-radius: 50px;
+            font-size: 12px;
+            color: #242424;
+        }
+        
+        span{
+            display: flex;
+            flex-direction: column;
+            
+
+            .title{ 
+                border: none;
+                padding: 0;
+                font-weight: 400;
+                font-size: 17px;
+            }
+            .subtitle{
+                font-size: 12px;
+                color: #808080;
+            }
+        }
+        
+    }
+    
+    .container-chart-data {
+        display: flex;
+        gap: 24px;
+        margin-top: 24px;
+    }
+    
+    .chart-data {
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+        background-color: #FFF; 
+        padding: 32px;
+        box-shadow: 0 0 4px #dddddd;
+       flex: 1;
+       min-height: 200px;
+       height: 350px;
+   }
+
+   .chart {
+       width: 100% !important;
+       height: 74% !important;
+   }
+
+   .container-card{
+        width: 100%;
+        height: 110px;
+        margin-top: 24px;
+        display: flex;
+        gap: 24px;
+
+        .card{
+            background-color: #FFFFFF;
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 32px;
+            box-shadow: 0 0 4px #dddddd;
+
+            span{
+                border: 1px solid #999999;
+                height: 52px;
+                width: 52px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50px;
+                font-size: 12px;
+            }
+
+            h3{
+                font-weight: 400;
+                font-size: 17px;
+                color: #323232;
+            }
+        }
+   }
+
+   .container-card-aproveitament{
+        display: flex;
+        width: 100%;
+        height: 400px;
+        gap: 24px;
+        margin-top: 24px;
+        
+        
+        .container-char {
+            // width: 300px;
+            height: 350px;
+            width: 350px;
+        }
+
+
+        .card{
+            padding: 24px;
+            flex: 1;
+            gap: 40px;
+            background-color: #FFF;
+            box-shadow: 0 0 4px #dddddd;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+
+
+            h3 {
+                font-weight: 400;
+                font-size: 17px;
+                color: #323232;
+                align-self: flex-start;
+            }
+        }
+   }
+
+   
+}

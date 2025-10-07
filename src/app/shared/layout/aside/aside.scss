@@ -1,0 +1,123 @@
+:host{
+    display: block;
+
+    button{
+        border: none;
+        outline: none;
+        height: 116px;
+        width: 100%;
+        background:transparent;
+        position: relative;
+        border-bottom: 1px solid #f1f1f1;
+        cursor: pointer;
+        color: #404040;
+    }
+
+    .active{
+        ng-icon{
+            color: #00266d;
+        }
+
+        p{
+            font-size: 14px;
+            color: #00266d;
+        }
+
+        &::after{
+            content: '';
+            background-color: #00266d;
+            width: 6px;
+            height: 82px;
+            position: absolute;
+            left: 0;
+            top: 18px;
+            border-radius: 4px;
+
+        }
+    }
+    
+    aside {
+        box-shadow: 0 20px 24px #c4c4c4;
+        display: flex;
+        height: 100%;
+
+        .hide{ margin-left: - calc(350px - 120px); }
+        
+        .main-menu{
+            background-color: #FFF;
+            border-right: 1px solid #f1f1f1;
+            transition: all .4s ease-out;
+            width: 120px;
+            z-index: 2;
+            display: flex;
+            align-items: start;
+            justify-content: start;
+            flex-direction: column;
+        }
+
+        .sub-menu{
+            background-color: #FFF;
+            transition: all .3s ease-out;
+            width: calc(350px - 120px);
+
+            .dropdown-container{
+                display: flex;
+                flex-direction: column;
+                
+                span{
+                    display: flex;
+                    width: 100%;
+                    align-items: center;
+                    gap: 10px;
+                }
+
+                .dropdown{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
+                    padding-left: 32px;
+                    padding-top: 16px;
+    
+                    ul{
+                        list-style: disc;
+                    }
+                }
+            }
+
+
+            ul{
+                padding: 32px;
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+                font-size: 14px;
+                color: #404040;
+                list-style: none;
+
+                .active{
+                    color: #00266d;
+
+                    &::after{
+                        position: absolute;
+                        background-color: #00266d;
+                        border-radius: 50px;
+                        left: -16px;
+                        top: 9px;
+                        width: 4px;
+                        height: 4px;
+                        content: "";
+                    }
+                }
+
+                li{
+                    position: relative;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                }
+            }
+        }
+    }
+}   
