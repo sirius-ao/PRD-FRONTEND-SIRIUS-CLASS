@@ -3,18 +3,28 @@
     display: grid;
     grid-template-rows: 40px 1fr;
     height: 100%;
-
+    
+    
     .header{
+        padding: 0;
         border-bottom: 1px solid #ddd;
-
+        
         ul{
             display: flex;
+            flex-direction: row;
             gap: 24px;
             list-style: none;
+            padding: 0;
+
+            .active{
+                font-weight: 600;
+                font-size: 14px;
+                color: #00266d;
+            }
 
             li{
                 font-weight: 300;
-                color: gray;
+                color: #404040;
                 cursor: pointer;
                 font-size: 14px;
             }
@@ -53,5 +63,11 @@
     }
     .container-buttons{
         margin-top: 16px;
+    }
+
+    .container-dados-aluno{
+        padding-top: 24px;
+        display: grid;
+        gap: 16px;
     }
 }
