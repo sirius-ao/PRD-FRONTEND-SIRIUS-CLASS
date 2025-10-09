@@ -4,63 +4,140 @@
     <div class="container-data">
         <div class="header">
             <ul>
-                <li>Dados do aluno</li>
-                <li>Documentos carregados</li>
-                <li>Informações de cursos</li>
-                <li>Pagamentos</li>
+                <li [ngClass]="stepIndex == 1 ? 'active':''" (click)="nextStep(1)">Dados do aluno</li>
+                <li [ngClass]="stepIndex == 2 ? 'active':''" (click)="nextStep(2)">Documentos carregados</li>
+                <li [ngClass]="stepIndex == 3 ? 'active':''" (click)="nextStep(3)">Informações de cursos</li>
+                <li [ngClass]="stepIndex == 4 ? 'active':''" (click)="nextStep(4)">Pagamentos</li>
             </ul>
         </div>
 
-        <div class="grid-2">
-            <label for="">
-                Nome
-                <input required mask="AAAAAAAAAAAAAAAAAAAA" type="text" name="" id="" placeholder="Digite apenas o nome">
-            </label>
-        
-            <label for="">
-                Sobrenome
-                <input required type="text" name="" id="" placeholder="Digite o sobrenome">
-            </label>
-        </div>
-        <div class="grid-3-first">
-            <label for="">
-                Bilhete de identidade
-                <input required mask="000000000AA000" type="text" name="" id="" class="uppercase" placeholder="BI 102876733KN046">
-            </label>
+        <!-- Dados do aluno -->
+        <div class="container-dados-aluno" [hidden]="stepIndex != 1">
+            <div class="grid-2">
+                <label for="">
+                    Nome
+                    <input required mask="AAAAAAAAAAAAAAAAAAAA" type="text" name="" id="" placeholder="Digite apenas o nome">
+                </label>
 
-            <label for="">
-                Data de nascimento
-                <input required mask="00 / 00 / 0000" type="text" placeholder="dd / mm / yyyyy" name="" id="">
-            </label>
-        
-            <label for="">
-                Genero
-                <Select required>
-                    <option value="">Homem</option>
-                    <option value="">Mulher</option>
-                </Select>
-            </label>            
-        </div>
-        <div class="grid-3-last">
-            <label for="">
-                Password
-                <input required placeholder="*****" type="password" name="" id="">
-            </label>
-
-            <label for="">
-                Telefone
-                <input required mask="000 000 000" name="" id="" placeholder="921 000 000">
-            </label>
-
-            <label for="">
-                Email
-                <input required type="email" name="" id="" placeholder="emailaluno@gmail.com">
-            </label>       
-        </div>
-        <div class="grid-2">
-            <div class="container-buttons">
-                <button class="primary-btn" routerLink="alunos/aluno">Actualizar dados</button>
+                <label for="">
+                    Sobrenome
+                    <input required type="text" name="" id="" placeholder="Digite o sobrenome">
+                </label>
             </div>
+            <div class="grid-3-first">
+                <label for="">
+                    Bilhete de identidade
+                    <input required mask="000000000AA000" type="text" name="" id="" class="uppercase" placeholder="BI 102876733KN046">
+                </label>
+
+                <label for="">
+                    Data de nascimento
+                    <input required mask="00 / 00 / 0000" type="text" placeholder="dd / mm / yyyyy" name="" id="">
+                </label>
+
+                <label for="">
+                    Genero
+                    <Select required>
+                        <option value="">Homem</option>
+                        <option value="">Mulher</option>
+                    </Select>
+                </label>
+            </div>
+            <div class="grid-3-last">
+                <label for="">
+                    Password
+                    <input required placeholder="*****" type="password" name="" id="">
+                </label>
+
+                <label for="">
+                    Telefone
+                    <input required mask="000 000 000" name="" id="" placeholder="921 000 000">
+                </label>
+
+                <label for="">
+                    Email
+                    <input required type="email" name="" id="" placeholder="emailaluno@gmail.com">
+                </label>
+            </div>
+            <div class="grid-2">
+                <div class="container-buttons">
+                    <button class="primary-btn" routerLink="alunos/aluno">Actualizar dados</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Documentos carregado -->
+        <div class="container-dados-aluno" [hidden]="stepIndex != 2">
+            <div class="grid-2">
+                <label for="" class="label-with-file" for="fileInput">
+                    Carregar BI
+                    <div class="container-file">
+                        <span>
+                            <p>Escolher Aquivos | </p>
+                            <p>Nenhum arquivo selecionado</p>
+                        </span>
+                        <input type="file" id="fileInput">
+                    </div>
+                </label>
+            
+                <label for="" class="label-with-file" for="fileInput">
+                    Carregar Certificado
+                    <div class="container-file">
+                        <span>
+                            <p>Escolher Aquivos | </p>
+                            <p>Nenhum arquivo selecionado</p>
+                        </span>
+                        <input type="file" id="fileInput">
+                    </div>
+                </label>
+            
+                <label for="" class="label-with-file" for="fileInput">
+                    Carregar foto
+                    <div class="container-file">
+                        <span>
+                            <p>Escolher Aquivos | </p>
+                            <p>Nenhum arquivo selecionado</p>
+                        </span>
+                        <input type="file" id="fileInput">
+                    </div>
+                </label>
+            </div>
+        </div>
+
+        <!-- Informações de cursos -->
+        <div class="container-dados-aluno" [hidden]="stepIndex != 3">
+            <div class="grid-2">
+                <label for="">
+                    Curso
+                    <Select required>
+                        <option value="">Programação Web</option>
+                        <option value="">Programação Mobile</option>
+                        <option value="">CCNA 1</option>
+                        <option value="">CCNA 2</option>
+                    </Select>
+            
+                </label>
+                <label for="">
+                    Edição
+                    <Select required>
+                        <option value="">Black Freeday</option>
+                        <option value="">Demo Day</option>
+                    </Select>
+                </label>
+                <label for="">
+                    Periudo
+                    <Select required>
+                        <option value="">8h às 10h</option>
+                        <option value="">12 às 14h</option>
+                        <option value="">16 às 18h</option>
+                    </Select>
+                </label>
+            </div>
+        </div>
+
+        <!-- Pagamentos -->
+        <div class="container-dados-aluno" [hidden]="stepIndex != 4">
+            <p>Pagamentos</p>
         </div>
     </div>
 
