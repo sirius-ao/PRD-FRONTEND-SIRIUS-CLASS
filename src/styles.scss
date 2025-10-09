@@ -1,5 +1,12 @@
 :root {
     --primary-color: blue;
+    --primary: #4361ee;
+    --secondary: #3a0ca3;
+    --accent: #f72585;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --success: #4cc9f0;
+    --gray: #6c757d;
 }
 
 @font-face {
@@ -15,13 +22,13 @@ table.dataTable thead tr {
 table.dataTable tbody tr {
     height: 54px !important;
 
-    &:hover{
+    &:hover {
         background-color: #FFF;
         cursor: pointer;
     }
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -31,9 +38,9 @@ table.dataTable tbody tr {
 
 /* Modo light */
 @media (prefers-color-scheme: light) {
-    :root{
+    :root {
         --bg-color: #FFFFFF;
-        --text-color: #181818;   
+        --text-color: #181818;
     }
 
     body {
@@ -43,29 +50,30 @@ table.dataTable tbody tr {
 }
 
 
-label{
+label {
     font-weight: 400;
     color: #181818;
     font-size: 16px;
-    
+
     display: flex;
     flex-direction: column;
     gap: 4px;
 
-    .uppercase{
+    .uppercase {
         text-transform: uppercase;
     }
 
-    select{
+    select {
         appearance: none;
         cursor: pointer;
 
-        option{
+        option {
             cursor: pointer;
         }
     }
 
-    input,select{
+    input,
+    select {
         height: 54px;
         width: 100%;
         background-color: transparent;
@@ -77,17 +85,17 @@ label{
         padding: 0 16px;
         font-size: 16px;
 
-        &:focus{
+        &:focus {
             border: 1px solid #5e96ff;
         }
 
-        &:valid{
+        &:valid {
             border: 1px solid #5e96ff;
         }
     }
 }
 
-.container-inputs{
+.container-inputs {
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -99,7 +107,7 @@ label{
 //     gap: 24px;
 // }
 
-.grid-3-first{
+.grid-3-first {
     display: grid;
     grid-template-columns: 2.1fr 1fr 1fr;
     gap: 24px;
@@ -117,27 +125,27 @@ label{
     gap: 24px;
 }
 
-.grid-2{
+.grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
 }
 
-.forms{
+.forms {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 32px;
     padding-top: 48px;
 }
 
-.container-buttons{
+.container-buttons {
     display: flex;
     align-items: flex-end;
     gap: 24px;
     align-self: flex-end;
     height: 100%;
 
-    button{
+    button {
         width: 100%;
         height: 54px;
         border: 1px solid #DDD;
@@ -150,34 +158,36 @@ label{
     }
 }
 
-.primary-btn{
-    background-color:#00266d;
+.primary-btn {
+    background-color: #00266d;
     color: #FFF;
     transition: all .2s;
 
-    &:hover{
+    &:hover {
         background-color: #00153d;
     }
-    &:active{
+
+    &:active {
         background-color: #00266d;
     }
 }
 
-.second-btn{
+.second-btn {
     background-color: #f4f4f4;
     color: #181818;
     transition: all .2s;
 
-    &:hover{
+    &:hover {
         background-color: #e4e4e4;
     }
+
     &:active {
         background-color: #f4f4f4;
     }
 }
 
 
-.container-data-table{
+.container-data-table {
     background-color: #FFFFFF;
     border-radius: 8px;
     padding: 24px;
@@ -186,18 +196,18 @@ label{
     height: 400%;
 }
 
-.container-selected-user{
+.container-selected-user {
     background-color: #FFFFFF;
     box-shadow: 0 0 2px #00000012;
     border-radius: 8px;
 }
 
-.container-student-card{
+.container-student-card {
     display: flex;
     align-items: center;
     justify-content: center;
 
-    .student-card{
+    .student-card {
         background-color: #FFF;
         border-radius: 8px;
         width: 100%;
@@ -205,50 +215,50 @@ label{
         height: 86%;
         box-shadow: 0 0 5px #97979724;
         display: grid;
-        grid-template-rows:1fr 80px;
+        grid-template-rows: 1fr 80px;
 
-        .card-header{
+        .card-header {
             //background-color: #eeeeee;
             width: 100%;
             border-radius: 8px 8px 0 0;
         }
 
-        .card-body{
+        .card-body {
             display: flex;
             flex-direction: column;
             align-items: center;
             padding: 40px 0;
             gap: 24px;
 
-            .name{
+            .name {
                 font-size: 24px;
                 font-weight: 500;
                 color: #404040;
             }
 
-            ul{
+            ul {
                 width: 64%;
                 list-style: none;
                 display: flex;
                 flex-direction: column;
                 gap: 8px;
 
-                li{
+                li {
                     color: #404040;
                     display: flex;
                     align-items: center;
                     gap: 24px;
                     justify-content: space-between;
                     font-weight: 500;
-                    
-                    span{
+
+                    span {
                         font-size: 16px;
-                        
+
                     }
                 }
             }
 
-            .photo-user{
+            .photo-user {
                 width: 150px;
                 height: 150px;
                 border-radius: 50%;
@@ -256,7 +266,7 @@ label{
             }
         }
 
-        .photo-aluno{
+        .photo-aluno {
             width: 150px;
             height: 150px;
             background-color: #f0f0f0;
@@ -265,8 +275,8 @@ label{
     }
 }
 
-.label-with-file{
-    .container-file{
+.label-with-file {
+    .container-file {
         height: 54px;
         width: 100%;
         outline: none;
@@ -275,28 +285,27 @@ label{
         color: #404040;
         display: flex;
         cursor: pointer;
-    
-        span{
+
+        span {
             display: flex;
             align-items: center;
             justify-content: center;
             margin-top: 16px;
             gap: 4px;
 
-            p{
+            p {
                 text-overflow: ellipsis;
                 overflow: hidden;
                 white-space: nowrap;
             }
         }
+
         padding: 0 16px;
         font-size: 16px;
 
-        p{
+        p {}
 
-        }
-
-        input{
+        input {
             display: none;
         }
     }
