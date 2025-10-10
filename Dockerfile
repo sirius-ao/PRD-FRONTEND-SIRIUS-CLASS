@@ -3,19 +3,12 @@
 # =========================
 FROM node:20-alpine AS build
 
-# Define diretório de trabalho
 WORKDIR /app
 
-# Copia apenas arquivos de dependências primeiro (para cache eficiente)
 COPY package*.json ./
-
-# Instala dependências
 RUN npm ci
 
-# Copia todo o restante do código
 COPY . .
-
-# Compila a aplicação Angular
 RUN npm run build --omit=dev
 
 # =========================
@@ -23,20 +16,18 @@ RUN npm run build --omit=dev
 # =========================
 FROM nginx:alpine
 
-# Remove configuração default do Nginx
+# Limpa o conteúdo padrão do Nginx
 RUN rm -rf /usr/share/nginx/html/*
 
-# Copia o build Angular (ajustado para ambas as estruturas)
-# Angular 18+ → dist/<app>/browser
-# Angular ≤17 → dist/<app>
-COPY --from=build /app/dist/sirius-dashboard/browser /usr/share/nginx/html 2>/dev/null || \
-    COPY --from=build /app/dist/sirius-dashboard /usr/share/nginx/html \
+# Copia o build (cobre Angular 17 e 18+)
+COPY --from=build /app/dist/sirius-dashboard /dist
 
-# Copia configuração customizada do nginx (opcional)
+# Se existir /browser, usa-o, senão usa /dist raiz
+RUN if [ -d /dist/browser ]; then cp -r /dist/browser/* /usr/share/nginx/html; else cp -r /dist/* /usr/share/nginx/html; fi
+
+# (Opcional) copia config customizada do nginx
 # COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Expõe a porta 80
 EXPOSE 80
 
-# Comando padrão
 CMD ["nginx", "-g", "daemon off;"]
