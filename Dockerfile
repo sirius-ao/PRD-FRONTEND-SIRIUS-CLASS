@@ -7,4 +7,4 @@ COPY . .
 RUN npm run build
 
 FROM nginx:alpine
-COPY --from=build /app/dist/sirius-dashboard/browser /usr/share/nginx/html
+COPY --from=build dist/sirius-dashboard/browser /usr/share/nginx/html
