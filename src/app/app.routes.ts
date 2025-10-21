@@ -8,7 +8,8 @@ import { AlunosFiltros } from './features/alunos/filtros/alunos.filtros';
 import { AlunoScreen } from './features/alunos/aluno/aluno';
 import { AlunosHistorico } from './features/alunos/historicos/alunos.historico';
 import { CreateProfessor } from './features/professores/create/create.professor';
-import { ListarProfessor } from './features/professores/listar.professor/listar.professor';
+import { ListarProfessor } from './features/professores/listar/listar.professor';
+import { HorariosProfessor } from './features/professores/horarios/horarios.professor';
 
 export const routes: Routes = [
   {
@@ -46,6 +47,7 @@ export const routes: Routes = [
           { path: '', redirectTo: 'create', pathMatch: 'full' },
           { path: 'create', component: CreateProfessor },
           { path: 'listar', component: ListarProfessor },
+          { path: 'horarios', component: HorariosProfessor },
         ]
       },
       {
