@@ -7,6 +7,9 @@ import { AlunosLista } from './features/alunos/listas/alunos.lista';
 import { AlunosFiltros } from './features/alunos/filtros/alunos.filtros';
 import { AlunoScreen } from './features/alunos/aluno/aluno';
 import { AlunosHistorico } from './features/alunos/historicos/alunos.historico';
+import { CreateProfessor } from './features/professores/create/create.professor';
+import { ListarProfessor } from './features/professores/listar/listar.professor';
+import { HorariosProfessor } from './features/professores/horarios/horarios.professor';
 
 export const routes: Routes = [
   {
@@ -40,12 +43,11 @@ export const routes: Routes = [
       },
       {
         path: 'professores',
-        component: AlunosMatricula,
         children: [
-          {
-            path: '',
-            component: AlunosMatricula
-          }
+          { path: '', redirectTo: 'create', pathMatch: 'full' },
+          { path: 'create', component: CreateProfessor },
+          { path: 'listar', component: ListarProfessor },
+          { path: 'horarios', component: HorariosProfessor },
         ]
       },
       {

@@ -1,0 +1,40 @@
+<app-header-indicator-page-component moduleName="Alunos" pageName="Listas" />
+
+<div class="grid-4">
+    <label for="">
+        Curso
+        <Select required>
+            <option value="">Programação Web</option>
+            <option value="">Programação Mobile</option>
+            <option value="">CCNA 1</option>
+            <option value="">CCNA 2</option>
+        </Select>
+
+    </label>
+    <label for="">
+        Edição
+        <Select required>
+            <option value="">Black Freeday</option>
+            <option value="">Demo Day</option>
+        </Select>
+    </label>
+    <label for="">
+        Situação
+        <Select required>
+            <option value="">Black Freeday</option>
+            <option value="">Demo Day</option>
+        </Select>
+    </label>
+    <label for="">
+        Periudo
+        <Select required>
+            <option value="">8h às 10h</option>
+            <option value="">12 às 14h</option>
+            <option value="">16 às 18h</option>
+        </Select>
+    </label>
+</div>
+
+<div class="container-datatable">
+    <table datatable [dtOptions]="dtOptions" class=""></table>
+</div>

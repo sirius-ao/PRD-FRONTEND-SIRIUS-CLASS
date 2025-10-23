@@ -1,0 +1,9 @@
+:host{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    
+    .container-inputs{
+        padding-top: 24px;
+    }
+}
