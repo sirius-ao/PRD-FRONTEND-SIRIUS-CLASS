@@ -20,7 +20,7 @@ FROM nginx:alpine
 RUN rm -rf /usr/share/nginx/html/*
 
 # Copia o build (cobre Angular 17 e 18+)
-COPY --from=build /app/dist/sirius-dashboard /usr/share/nginx/html
+COPY --from=build /app/dist/sirius-dashboard/browser /usr/share/nginx/html
 
 # Verifica e ajusta a estrutura do build do Angular
 RUN if [ -d /usr/share/nginx/html/browser ]; then \
