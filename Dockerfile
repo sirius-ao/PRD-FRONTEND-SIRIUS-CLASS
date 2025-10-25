@@ -19,17 +19,21 @@ FROM nginx:alpine
 # Limpa o conteúdo padrão do Nginx
 RUN rm -rf /usr/share/nginx/html/*
 
-# Copia o build (cobre Angular 17 e 18+)
-COPY --from=build /app/dist/sirius-dashboard/browser /usr/share/nginx/html
+# Copia o build do Angular (versão compatível com Angular 17+)
+COPY --from=build /app/dist/sirius-dashboard /usr/share/nginx/html
 
-# Verifica e ajusta a estrutura do build do Angular
+# Corrige a estrutura de diretórios se necessário
 RUN if [ -d /usr/share/nginx/html/browser ]; then \
-        mv /usr/share/nginx/html/browser/* /usr/share/nginx/html/ && \
+        cp -r /usr/share/nginx/html/browser/* /usr/share/nginx/html/ && \
         rm -rf /usr/share/nginx/html/browser; \
     fi
 
-# Copia configuração customizada do nginx se existir
-# COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Copia configuração customizada do nginx (CRÍTICO)
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Corrige permissões
+RUN chmod -R 755 /usr/share/nginx/html && \
+    chown -R nginx:nginx /usr/share/nginx/html
 
 EXPOSE 80
 
