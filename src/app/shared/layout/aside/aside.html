@@ -17,6 +17,11 @@
 
         <button routerLink="cursos" routerLinkActive="active" (click)="changeActiveLink('cursos')">
             <ng-icon name="lucideFile" size="32px" strokeWidth="1" />
+            <p>Planificacoes</p>
+        </button>
+
+        <button routerLink="cursos" routerLinkActive="active" (click)="changeActiveLink('cursos')">
+            <ng-icon name="lucideFile" size="32px" strokeWidth="1" />
             <p>Cursos</p>
         </button>
         
@@ -47,8 +52,7 @@
                 <ul>
                     <li routerLink="professores/create" routerLinkActive="active"> <ng-icon name="lucideIdCardLanyard" size="22px" strokeWidth="0.8" /> Novo professor </li>
                     <li routerLink="professores/listar" routerLinkActive="active"> <ng-icon name="lucideLibrary" size="22px" strokeWidth="0.8" /> Listas </li>
-                    <li routerLink="professores/horarios" routerLinkActive="active"> <ng-icon name="lucideNotebook" size="22px" strokeWidth="0.8" /> Turmas </li>
-                    <li> <ng-icon name="lucideCalendarClock" size="22px" strokeWidth="0.8" /> Carga Horária </li>
+                    <li routerLink="professores/turmas" routerLinkActive="active"> <ng-icon name="lucideNotebook" size="22px" strokeWidth="0.8" /> Turmas </li>
                     <li> <ng-icon name="lucideSquareCheckBig" size="22px" strokeWidth="0.8" /> Desempenho </li>
                     <li> <ng-icon name="lucideFolderOpen" size="22px" strokeWidth="0.8" /> Relatórios </li>
                 </ul>
@@ -56,7 +60,7 @@
             @case ("cursos") {
                 <ul>
                     <li routerLink="alunos" routerLinkActive="active"> <ng-icon name="lucideFile" size="22px" strokeWidth="0.8" /> Novo curso </li>
-                    <li> <ng-icon name="lucideCalendar" size="22px" strokeWidth="0.8" /> Calendários </li>
+                    <li> <ng-icon name="lucideCalendar" size="22px" strokeWidth="0.8" /> Edição </li>
                     <li> <ng-icon name="lucideNotebook" size="22px" strokeWidth="0.8" /> Turmas </li>
                     <li> <ng-icon name="lucideCalendarClock" size="22px" strokeWidth="0.8" /> Gestão de Turmas </li>
                     <li> <ng-icon name="lucideBookCopy" size="22px" strokeWidth="0.8" /> Conteúdos </li>

@@ -10,6 +10,7 @@ import { AlunosHistorico } from './features/alunos/historicos/alunos.historico';
 import { CreateProfessor } from './features/professores/create/create.professor';
 import { ListarProfessor } from './features/professores/listar/listar.professor';
 import { HorariosProfessor } from './features/professores/horarios/horarios.professor';
+import { TurmasProfessor } from './features/professores/turmas/turmas.professor';
 
 export const routes: Routes = [
   {
@@ -47,6 +48,7 @@ export const routes: Routes = [
           { path: '', redirectTo: 'create', pathMatch: 'full' },
           { path: 'create', component: CreateProfessor },
           { path: 'listar', component: ListarProfessor },
+          { path: 'turmas', component: TurmasProfessor },
           { path: 'horarios', component: HorariosProfessor },
         ]
       },

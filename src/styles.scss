@@ -322,3 +322,39 @@ select{
     background-color: transparent;
     width: 100%;
 }
+
+.state-Pendente{
+    background-color: #afa6022a;
+    color: #afa602;
+    font-weight: 500;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    padding: 0 16px;
+}
+
+.state-Activo{
+    background-color: #02af302a;
+    color: #08af02;
+    font-weight: 500;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    padding: 0 16px;
+}
+
+.state-Inactivo{
+    background-color: #af02022a;
+    color: #af0202;
+    font-weight: 500;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    padding: 0 16px;
+}

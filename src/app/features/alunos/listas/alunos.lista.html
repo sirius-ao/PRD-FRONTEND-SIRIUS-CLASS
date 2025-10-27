@@ -1,40 +1,102 @@
 <app-header-indicator-page-component moduleName="Alunos" pageName="Listas" />
 
-<div class="grid-4">
-    <label for="">
-        Curso
-        <Select required>
-            <option value="">Programação Web</option>
-            <option value="">Programação Mobile</option>
-            <option value="">CCNA 1</option>
-            <option value="">CCNA 2</option>
-        </Select>
+<div class="grid-3">
+  <label for="">
+    Nome
+    <input required mask="AAAAAAAAAAAAAAAAAAAA" type="text" name="" id="" placeholder="Digite apenas o nome">
+  </label>
+  <label for="">
+    Sobrenome
+    <input required type="text" name="" id="" placeholder="Digite o sobrenome">
+  </label>
+  <label for="">
+    Bilhete de identidade
+    <input required mask="000000000AA000" type="text" name="" id="" class="uppercase" placeholder="BI 102876733KN046">
+  </label>
+</div>
 
+ <div class="grid-4" [hidden]="!buscaAgrupadaInput">
+  <label for="">
+      Curso
+      <Select required>
+          <option value="">Programação Web</option>
+          <option value="">Programação Mobile</option>
+          <option value="">CCNA 1</option>
+          <option value="">CCNA 2</option>
+      </Select>
+  </label>
+  <label for="">
+      Edição
+      <Select required>
+          <option value="">Black Freeday</option>
+          <option value="">Demo Day</option>
+      </Select>
     </label>
     <label for="">
-        Edição
-        <Select required>
-            <option value="">Black Freeday</option>
-            <option value="">Demo Day</option>
-        </Select>
-    </label>
-    <label for="">
-        Situação
-        <Select required>
-            <option value="">Black Freeday</option>
-            <option value="">Demo Day</option>
-        </Select>
-    </label>
-    <label for="">
-        Periudo
+        Periudo                
         <Select required>
             <option value="">8h às 10h</option>
             <option value="">12 às 14h</option>
             <option value="">16 às 18h</option>
         </Select>
     </label>
+    <label for="">
+        Turma
+        <Select required>
+            <option value="">AB12</option>
+            <option value="">AB13</option>
+            <option value="">AB14</option>
+            <option value="">AB15</option>
+        </Select>
+    </label>
+</div>
+
+<div class="grid-3">
+  <span></span>
+  <span></span>
+  <div class="swith-component">
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" [(ngModel)]="buscaAgrupadaInput">
+      <label class="form-check-label" for="flexSwitchCheckDefault">Busca agrupada</label>
+    </div>
+  </div>
 </div>
 
 <div class="container-datatable">
-    <table datatable [dtOptions]="dtOptions" class=""></table>
+  <table datatable [dtOptions]="dtOptions" class="">
+    <thead>
+      <tr>
+        <td>Nome</td>
+        <td>BI</td>
+        <td>Nascimento</td>
+        <td>Gênero</td>
+        <td>Email</td>
+        <td>Telefone</td>
+        <td>Curso</td>
+        <td>Edição</td>
+        <td>Período</td>
+        <td>Turma</td>
+        <td>Estado</td>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of allAlunos; track $index) {
+        <tr routerLink="/aluno">
+          <td> {{item.name}} </td>
+          <td> {{item.bi}} </td>
+          <td> {{item.dataNasc}} </td>
+          <td> {{item.genero}} </td>
+          <td> {{item.email}} </td>
+          <td> {{item.telephone}} </td>
+          <td> {{item.curso}} </td>
+          <td> {{item.edicao}} </td>
+          <td> {{item.periodo}} </td>
+          <td> {{item.turma}} </td>
+          <td> 
+            <span [class]="'state-'+item.estado">{{item.estado}}</span> 
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
 </div>
