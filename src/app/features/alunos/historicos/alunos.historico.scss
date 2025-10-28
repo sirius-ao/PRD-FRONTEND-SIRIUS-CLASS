@@ -2,6 +2,16 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+
+    .swith-component{
+        display: flex;
+        justify-content: end;
+        
+        input{
+            cursor: pointer;
+
+        }
+    }
 }
 .container-card{
     display: grid;
