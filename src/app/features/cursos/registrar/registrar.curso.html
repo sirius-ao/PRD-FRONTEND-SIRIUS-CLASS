@@ -1,0 +1,29 @@
+<app-header-indicator-page-component moduleName="Cursos" pageName="Registrar"/>
+
+<div class="grid-2-last">
+	<label for="">
+		Curso
+		<input required type="text" name="" id="" placeholder="Nome do curso">
+	</label>
+
+	<label for="">
+		Descrição
+		<input required type="text" name="" id="" placeholder="Descrição do curso">
+	</label>
+</div>
+
+<div class="grid-3">
+	<label for="">
+		Horas
+		<input required type="text" mask="00000" name="" id="" class="uppercase" placeholder="0 H" suffix=" h">
+	</label>
+	
+	<label for="">
+		Preço
+		<input required type="text" mask="separator.2" name="" id="" class="uppercase" placeholder="0,00 kz" suffix=",00 Kz">
+	</label>
+
+	<div class="container-buttons">
+		<button data-bs-target="#navigateToPayment" data-bs-toggle="modal" class="primary-btn">Registrar Curso</button>
+	</div>
+</div>

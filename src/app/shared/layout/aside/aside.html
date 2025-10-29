@@ -17,12 +17,12 @@
 
         <button routerLink="cursos" routerLinkActive="active" (click)="changeActiveLink('cursos')">
             <ng-icon name="lucideFile" size="32px" strokeWidth="1" />
-            <p>Planificacoes</p>
+            <p>Cursos</p>
         </button>
 
-        <button routerLink="cursos" routerLinkActive="active" (click)="changeActiveLink('cursos')">
+        <button (click)="changeActiveLink('cursos')">
             <ng-icon name="lucideFile" size="32px" strokeWidth="1" />
-            <p>Cursos</p>
+            <p>Planificacoes</p>
         </button>
         
         <button routerLink="financas" routerLinkActive="active" (click)="changeActiveLink('financas')">
@@ -57,7 +57,7 @@
                     <li> <ng-icon name="lucideFolderOpen" size="22px" strokeWidth="0.8" /> Relatórios </li>
                 </ul>
             }
-            @case ("cursos") {
+            @case ("planifições") {
                 <ul>
                     <li routerLink="alunos" routerLinkActive="active"> <ng-icon name="lucideFile" size="22px" strokeWidth="0.8" /> Novo curso </li>
                     <li> <ng-icon name="lucideCalendar" size="22px" strokeWidth="0.8" /> Edição </li>
@@ -65,6 +65,16 @@
                     <li> <ng-icon name="lucideCalendarClock" size="22px" strokeWidth="0.8" /> Gestão de Turmas </li>
                     <li> <ng-icon name="lucideBookCopy" size="22px" strokeWidth="0.8" /> Conteúdos </li>
                     <li> <ng-icon name="lucideFolderOpen" size="22px" strokeWidth="0.8" /> Relatórios </li>
+                </ul>
+            }
+            @case ("cursos") {
+                <ul>
+                    <li routerLink="cursos/registrar" routerLinkActive="active"> <ng-icon name="lucideFile" size="22px" strokeWidth="0.8" /> Novo curso </li>
+                    <li routerLink="cursos/edicao" routerLinkActive="active"> <ng-icon name="lucideCalendar" size="22px" strokeWidth="0.8" /> Edição </li>
+                    <li routerLink="cursos/turmas" routerLinkActive="active"> <ng-icon name="lucideNotebook" size="22px" strokeWidth="0.8" /> Turmas </li>
+                    <li routerLink="cursos/gestao-turma" routerLinkActive="active"> <ng-icon name="lucideCalendarClock" size="22px" strokeWidth="0.8" /> Gestão de Turmas </li>
+                    <li routerLink="cursos/conteudo" routerLinkActive="active"> <ng-icon name="lucideBookCopy" size="22px" strokeWidth="0.8" /> Conteúdos </li>
+                    <li routerLink="cursos/relatorios" routerLinkActive="active"> <ng-icon name="lucideFolderOpen" size="22px" strokeWidth="0.8" /> Relatórios </li>
                 </ul>
             }
             @case ("financas") {
