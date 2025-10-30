@@ -19,32 +19,14 @@ FROM nginx:alpine
 # Limpa o conteúdo padrão do Nginx
 RUN rm -rf /usr/share/nginx/html/*
 
-# Copia o build do Angular
-COPY --from=build /app/dist/sirius-dashboard /usr/share/nginx/html
+# Copia o build (cobre Angular 17 e 18+)
+COPY --from=build /app/dist/sirius-dashboard /dist
 
-# Corrige a estrutura de diretórios se necessário
-RUN if [ -d /usr/share/nginx/html/browser ]; then \
-        cp -r /usr/share/nginx/html/browser/* /usr/share/nginx/html/ && \
-        rm -rf /usr/share/nginx/html/browser; \
-    fi
+# Se existir /browser, usa-o, senão usa /dist raiz
+RUN if [ -d /dist/browser ]; then cp -r /dist/browser/* /usr/share/nginx/html; else cp -r /dist/* /usr/share/nginx/html; fi
 
-# Configuração básica do Nginx sem arquivo externo
-RUN echo 'server { \
-    listen 80; \
-    server_name _; \
-    root /usr/share/nginx/html; \
-    index index.html index.htm; \
-    location / { \
-        try_files \$uri \$uri/ /index.html; \
-    } \
-    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$ { \
-        expires 1y; \
-        add_header Cache-Control "public, immutable"; \
-    } \
-}' > /etc/nginx/conf.d/default.conf
-
-# Corrige permissões
-RUN chmod -R 755 /usr/share/nginx/html
+# (Opcional) copia config customizada do nginx
+# COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
