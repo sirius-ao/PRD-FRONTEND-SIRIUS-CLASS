@@ -10,6 +10,11 @@ import { AlunosHistorico } from './features/alunos/historicos/alunos.historico';
 import { CreateProfessor } from './features/professores/create/create.professor';
 import { ListarProfessor } from './features/professores/listar/listar.professor';
 import { HorariosProfessor } from './features/professores/horarios/horarios.professor';
+import { TurmasProfessor } from './features/professores/turmas/turmas.professor';
+import { RegistrarCurso } from './features/cursos/registrar/registrar.curso';
+import { EdicaoCurso } from './features/cursos/edicao/edicao.curso';
+import { TurmasCurso } from './features/cursos/turmas/turmas.curso';
+import { GestaoTurmasCurso } from './features/cursos/gestao-turmas/gestao-turmas.curso';
 
 export const routes: Routes = [
   {
@@ -47,17 +52,18 @@ export const routes: Routes = [
           { path: '', redirectTo: 'create', pathMatch: 'full' },
           { path: 'create', component: CreateProfessor },
           { path: 'listar', component: ListarProfessor },
+          { path: 'turmas', component: TurmasProfessor },
           { path: 'horarios', component: HorariosProfessor },
         ]
       },
       {
         path: 'cursos',
-        component: AlunosMatricula,
         children: [
-          {
-            path: '',
-            component: AlunosMatricula
-          }
+          { path: '', redirectTo: 'registrar', pathMatch: 'full' },
+          { path: 'registrar', component: RegistrarCurso },
+          { path: 'edicao', component: EdicaoCurso },
+          { path: 'turmas', component: TurmasCurso },
+          { path: 'gestao-turma', component: GestaoTurmasCurso },
         ]
       },
       {

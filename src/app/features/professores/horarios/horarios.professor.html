@@ -1,5 +1,100 @@
-<app-header-indicator-page-component moduleName="Formadores" pageName="Turmas" />
+<app-header-indicator-page-component moduleName="Formadores" pageName="Horarios" />
 
+<app-header-indicator-page-component pageName="Dados do curso" />
+<div class="grid-3">
+  <label for="">
+    Area de ensino
+    <Select required>
+      <option value="">Selecione a area de ensino</option>
+      <option value="">Informatica</option>
+      <option value="">Linguas</option>
+      <option value="">Artes</option>
+    </Select>
+  </label>
+  <label for="">
+    curso
+    <Select required>
+      <option value="">Selecione o curso</option>
+      <option value="">Desenvolvimento web</option>
+      <option value="">Ingles</option>
+      <option value="">Pintura</option>
+    </Select>
+  </label>
+  <label for="">
+    Nivel do curso
+    <Select required>
+      <option value="">Selecione o nivel do curso</option>
+      <option value="">Basico</option>
+      <option value="">Intermediario</option>
+      <option value="">Avancado</option>
+    </Select>
+  </label>
+</div>
+<div class="grid-3-first">
+  <label for="">
+    Designaçao do curso
+    <input type="text" placeholder="Descreva o curso selecionado">
+  </label>
+
+  <label for="">
+    Metodologia de ensino
+    <select required>
+      <option value="">Presencial</option>
+      <option value="">Online</option>
+      <option value="">Hibrido</option>
+    </select>
+  </label>
+
+   <label for="">
+    Metodologia de avaliaçao
+    <select name="" id="">
+      <option value="">Teste escrito</option>
+      <option value="">Trabalho prático</option>
+      <option value="">Apresentaçao oral</option>
+    </select>
+  </label>
+</div>
+
+<div class="grid-3">
+  <label for="">
+    Competencias a desenvolver
+    <select name="" id="">
+      <option value="">Comunicaçao eficaz</option>
+      <option value="">Trabalho em equipa</option>
+      <option value="">Resoluçao de problemas</option>
+    </select>
+  </label>
+
+  <label for="">
+    Total de horas
+    <input type="number" placeholder="000">
+  </label>
+</div>
+<app-header-indicator-page-component pageName="Modulos" />
 <div class="container-datatable">
-    <table datatable [dtOptions]="dtOptions" class=""></table>
+  <table>
+    <tr>
+      <th><input type="text" value="Modulo 1"></th>
+      <th><input type="text" value="Modulo 2"></th>
+      <th><input type="text" value="Modulo 3"></th>
+      <th><input type="text" value="Modulo 4"></th>
+      <th><input type="text" value="Modulo 5"></th>
+      <th><button>Mais modulos</button></th>
+    </tr>
+    <tr>
+      <td><input type="text" value="subModulo 1"></td>
+      <td><input type="text" value="subModulo 2"></td>
+      <td><input type="text" value="subModulo 3"></td>
+      <td><input type="text" value="subModulo 4"></td>
+      <td><input type="text" value="subModulo 5"></td>
+    </tr>
+  </table>
+</div>
+<div class="grid-2"></div>
+<div class="grid-3">
+  <span></span>
+  <span></span>
+  <div class="container-buttons">
+    <button data-bs-target="#navigateToPayment" data-bs-toggle="modal" class="primary-btn">Matricular aluno</button>
+  </div>
 </div>
