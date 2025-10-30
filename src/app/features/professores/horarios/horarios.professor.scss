@@ -1,2 +1,23 @@
 :host{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .container-datatable{
+        table{ 
+            width: 100%;
+            gap: 16px;
+            display: flex;
+            flex-direction: column;
+            tr{
+                width: 100%;
+                display: flex;
+                gap: 16px;
+                
+            }
+            
+            input{
+            }
+        }
+    }
 }

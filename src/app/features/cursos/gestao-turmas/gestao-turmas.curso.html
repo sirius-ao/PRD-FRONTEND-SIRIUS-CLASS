@@ -1,0 +1,82 @@
+<app-header-indicator-page-component moduleName="Cursos" pageName="Gestão de turmas" />
+<div class="grid-3">
+    <label for="">
+		Cursos
+		<Select required>
+			<option value="">Informática</option>
+			<option value="">CCNA 1</option>
+			<option value="">CCNA 2</option>
+			<option value="">CCNA 3</option>
+		</Select>
+	</label>
+
+	<label for="">
+		Trimestre
+		<Select required>
+			<option value="">Primeiro trimestre</option>
+			<option value="">Segundo trimestre</option>
+			<option value="">Terceiro trimestre</option>
+		</Select>
+	</label>
+
+    <label for="">
+		Edição
+		<Select required>
+			<option value="">Primeiro trimestre</option>
+			<option value="">Segundo trimestre</option>
+			<option value="">Terceiro trimestre</option>
+		</Select>
+	</label>
+
+    <label for="">
+		Turmas
+		<Select required>
+			<option value="">Primeiro trimestre</option>
+			<option value="">Segundo trimestre</option>
+			<option value="">Terceiro trimestre</option>
+		</Select>
+	</label>
+</div>
+
+<app-header-indicator-page-component moduleName="" pageName="Lista alunos" />
+
+<div class="container-datatable">
+  <table datatable [dtOptions]="dtOptions" class="">
+    <thead>
+      <tr>
+        <td></td>
+        <td>Nome</td>
+        <td>BI</td>
+        <td>Nascimento</td>
+        <td>Gênero</td>
+        <td>Email</td>
+        <td>Telefone</td>
+        <td>Estado</td>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of allAlunos; track $index) {
+        <tr routerLink="/aluno">
+					<td> <input type="checkbox" class="checkbox-input"> </td>
+          <td> {{item.name}} </td>
+          <td> {{item.bi}} </td>
+          <td> {{item.dataNasc}} </td>
+          <td> {{item.genero}} </td>
+          <td> {{item.email}} </td>
+          <td> {{item.telephone}} </td>
+          <td> 
+            <span [class]="'state-'+item.estado">{{item.estado}}</span> 
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+<div class="grid-3">
+	<span></span>
+	<span></span>
+	<div class="container-buttons">
+		<button data-bs-target="#navigateToPayment" data-bs-toggle="modal" class="primary-btn">Registrar Turma</button>
+	</div>
+</div>
